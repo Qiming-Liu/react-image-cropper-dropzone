@@ -2457,7 +2457,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/pluginutils@npm:^5.0.1":
+"@rollup/pluginutils@npm:^5.0.1, @rollup/pluginutils@npm:^5.0.2":
   version: 5.0.2
   resolution: "@rollup/pluginutils@npm:5.0.2"
   dependencies:
@@ -10346,6 +10346,7 @@ __metadata:
     rollup-plugin-bundle-size: ^1.0.3
     rollup-plugin-delete: ^2.0.0
     rollup-plugin-dts: ^5.2.0
+    rollup-plugin-import-css: ^3.2.1
     rollup-plugin-postcss: ^4.0.2
     rollup-plugin-serve: ^2.0.2
     tslib: ^2.5.0
@@ -10845,6 +10846,17 @@ __metadata:
     "@babel/code-frame":
       optional: true
   checksum: cb4a1ff5307efb9a89edd72b5bd1760d8dd3df7b7c5ea61615755669619ec1441e916fe1452068bc17dbae17efbd4cfe6f55478690eb809800f0ffdb76a52fc9
+  languageName: node
+  linkType: hard
+
+"rollup-plugin-import-css@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "rollup-plugin-import-css@npm:3.2.1"
+  dependencies:
+    "@rollup/pluginutils": ^5.0.2
+  peerDependencies:
+    rollup: ^2.x.x || ^3.x.x
+  checksum: b3b27bbe74a62a3ee63bad0ea01215ed795ecf591f00f3f0c548e5bd396f9bec96aa7ff24f13ce2ce225df158d042e1e8642862cd285ff9c5c8704db93f3bb21
   languageName: node
   linkType: hard
 

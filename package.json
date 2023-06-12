@@ -1,9 +1,9 @@
 {
   "name": "react-image-cropper-dropzone",
   "version": "1.0.0",
-  "description": "",
-  "main": "dist/react-cropper.umd.js",
-  "module": "dist/react-cropper.es.js",
+  "description": "Simple react dropzone for image cropper.",
+  "main": "dist/react-image-cropper-dropzone.umd.js",
+  "module": "dist/react-image-cropper-dropzone.es.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
@@ -12,8 +12,12 @@
     "README.md",
     "package.json"
   ],
-  "author": "Qiming Liu",
+  "author": "Qiming-Liu (https://github.com/Qiming-Liu)",
   "license": "MIT",
+  "homepage": "https://github.com/Qiming-Liu/react-image-cropper-dropzone",
+  "bugs": {
+    "url": "https://github.com/Qiming-Liu/react-image-cropper-dropzone/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Qiming-Liu/react-image-cropper-dropzone.git"
@@ -28,13 +32,15 @@
   "scripts": {
     "dev": "rollup --config rollup.config.dev.mjs -w",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src ./example --fix",
-    "test": "jest --coverage --forceExit",
+    "test": "jest --coverage --forceExit --passWithNoTests",
+    "prepublishOnly": "yarn build",
     "build": "yarn clean && rollup --config rollup.config.mjs",
     "clean": "rimraf dist"
   },
   "dependencies": {
     "react-cropper": "^2.1.8",
-    "react-dropzone": "^14.2.3"
+    "react-dropzone": "^14.2.3",
+    "rollup-plugin-import-css": "^3.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
