@@ -1,0 +1,17 @@
+{
+  "include": ["src", "example"],
+  "compilerOptions": {
+    "lib": ["es6", "dom"],
+    "jsx": "react",
+    "allowJs": true,
+    "sourceMap": true,
+    "importHelpers": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+  }
+}
