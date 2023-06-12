@@ -57,7 +57,7 @@
     "@types/react-dom": "^18.0.11",
     "@types/react-test-renderer": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
-    "@typescript-eslint/parser": "^5.54.1",
+    "@typescript-eslint/parser": "^5.59.9",
     "acorn-jsx": "^5.3.2",
     "babel-jest": "^29.5.0",
     "babel-preset-react-app": "^10.0.1",
