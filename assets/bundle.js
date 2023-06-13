@@ -7,19 +7,11 @@
 		return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 	}
 
-	var reactDomExports = {};
-	var reactDom = {
-	  get exports(){ return reactDomExports; },
-	  set exports(v){ reactDomExports = v; },
-	};
+	var reactDom = {exports: {}};
 
 	var reactDom_production_min = {};
 
-	var reactExports = {};
-	var react = {
-	  get exports(){ return reactExports; },
-	  set exports(v){ reactExports = v; },
-	};
+	var react = {exports: {}};
 
 	var react_production_min = {};
 
@@ -372,19 +364,13 @@
 	};
 	react_production_min.version = "18.2.0";
 
-	(function (module) {
-
-	  {
-	    module.exports = react_production_min;
-	  }
-	})(react);
+	{
+	  react.exports = react_production_min;
+	}
+	var reactExports = react.exports;
 	var React = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
 
-	var schedulerExports = {};
-	var scheduler = {
-	  get exports(){ return schedulerExports; },
-	  set exports(v){ schedulerExports = v; },
-	};
+	var scheduler = {exports: {}};
 
 	var scheduler_production_min = {};
 
@@ -646,12 +632,10 @@
 	  };
 	})(scheduler_production_min);
 
-	(function (module) {
-
-	  {
-	    module.exports = scheduler_production_min;
-	  }
-	})(scheduler);
+	{
+	  scheduler.exports = scheduler_production_min;
+	}
+	var schedulerExports = scheduler.exports;
 
 	/**
 	 * @license React
@@ -7782,29 +7766,27 @@
 	};
 	reactDom_production_min.version = "18.2.0-next-9e3b772b8-20220608";
 
-	(function (module) {
-
-	  function checkDCE() {
-	    /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
-	    if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function') {
-	      return;
-	    }
-	    try {
-	      // Verify that the code above has been dead code eliminated (DCE'd).
-	      __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
-	    } catch (err) {
-	      // DevTools shouldn't crash React, no matter what.
-	      // We should still report in case we break this code.
-	      console.error(err);
-	    }
+	function checkDCE() {
+	  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
+	  if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function') {
+	    return;
 	  }
-	  {
-	    // DCE check should happen before ReactDOM bundle executes so that
-	    // DevTools can report bad minification during injection.
-	    checkDCE();
-	    module.exports = reactDom_production_min;
+	  try {
+	    // Verify that the code above has been dead code eliminated (DCE'd).
+	    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
+	  } catch (err) {
+	    // DevTools shouldn't crash React, no matter what.
+	    // We should still report in case we break this code.
+	    console.error(err);
 	  }
-	})(reactDom);
+	}
+	{
+	  // DCE check should happen before ReactDOM bundle executes so that
+	  // DevTools can report bad minification during injection.
+	  checkDCE();
+	  reactDom.exports = reactDom_production_min;
+	}
+	var reactDomExports = reactDom.exports;
 
 	var createRoot;
 	var m = reactDomExports;
@@ -7827,6 +7809,8 @@
 	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 	PERFORMANCE OF THIS SOFTWARE.
 	***************************************************************************** */
+	/* global Reflect, Promise */
+
 	var __assign = function () {
 	  __assign = Object.assign || function __assign(t) {
 	    for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -7984,11 +7968,7 @@
 	  return to.concat(ar || Array.prototype.slice.call(from));
 	}
 
-	var propTypesExports = {};
-	var propTypes = {
-	  get exports(){ return propTypesExports; },
-	  set exports(v){ propTypesExports = v; },
-	};
+	var propTypes = {exports: {}};
 
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
@@ -8063,6 +8043,8 @@
 	  // http://fb.me/prop-types-in-prod
 	  propTypes.exports = factoryWithThrowingShims();
 	}
+	var propTypesExports = propTypes.exports;
+	var PropTypes = /*@__PURE__*/getDefaultExportFromCjs(propTypesExports);
 
 	var COMMON_MIME_TYPES = new Map([
 	// https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
@@ -8887,7 +8869,7 @@
 	   * @param {File[]} params.acceptedFiles Accepted files
 	   * @param {FileRejection[]} params.fileRejections Rejected files and why they were rejected
 	   */
-	  children: propTypesExports.func,
+	  children: PropTypes.func,
 	  /**
 	   * Set accepted file types.
 	   * Checkout https://developer.mozilla.org/en-US/docs/Web/API/window/showOpenFilePicker types option for more information.
@@ -8895,90 +8877,90 @@
 	   * for example, are reported as text/plain under macOS but as application/vnd.ms-excel under
 	   * Windows. In some cases there might not be a mime type set at all (https://github.com/react-dropzone/react-dropzone/issues/276).
 	   */
-	  accept: propTypesExports.objectOf(propTypesExports.arrayOf(propTypesExports.string)),
+	  accept: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)),
 	  /**
 	   * Allow drag 'n' drop (or selection from the file dialog) of multiple files
 	   */
-	  multiple: propTypesExports.bool,
+	  multiple: PropTypes.bool,
 	  /**
 	   * If false, allow dropped items to take over the current browser window
 	   */
-	  preventDropOnDocument: propTypesExports.bool,
+	  preventDropOnDocument: PropTypes.bool,
 	  /**
 	   * If true, disables click to open the native file selection dialog
 	   */
-	  noClick: propTypesExports.bool,
+	  noClick: PropTypes.bool,
 	  /**
 	   * If true, disables SPACE/ENTER to open the native file selection dialog.
 	   * Note that it also stops tracking the focus state.
 	   */
-	  noKeyboard: propTypesExports.bool,
+	  noKeyboard: PropTypes.bool,
 	  /**
 	   * If true, disables drag 'n' drop
 	   */
-	  noDrag: propTypesExports.bool,
+	  noDrag: PropTypes.bool,
 	  /**
 	   * If true, stops drag event propagation to parents
 	   */
-	  noDragEventsBubbling: propTypesExports.bool,
+	  noDragEventsBubbling: PropTypes.bool,
 	  /**
 	   * Minimum file size (in bytes)
 	   */
-	  minSize: propTypesExports.number,
+	  minSize: PropTypes.number,
 	  /**
 	   * Maximum file size (in bytes)
 	   */
-	  maxSize: propTypesExports.number,
+	  maxSize: PropTypes.number,
 	  /**
 	   * Maximum accepted number of files
 	   * The default value is 0 which means there is no limitation to how many files are accepted.
 	   */
-	  maxFiles: propTypesExports.number,
+	  maxFiles: PropTypes.number,
 	  /**
 	   * Enable/disable the dropzone
 	   */
-	  disabled: propTypesExports.bool,
+	  disabled: PropTypes.bool,
 	  /**
 	   * Use this to provide a custom file aggregator
 	   *
 	   * @param {(DragEvent|Event)} event A drag event or input change event (if files were selected via the file dialog)
 	   */
-	  getFilesFromEvent: propTypesExports.func,
+	  getFilesFromEvent: PropTypes.func,
 	  /**
 	   * Cb for when closing the file dialog with no selection
 	   */
-	  onFileDialogCancel: propTypesExports.func,
+	  onFileDialogCancel: PropTypes.func,
 	  /**
 	   * Cb for when opening the file dialog
 	   */
-	  onFileDialogOpen: propTypesExports.func,
+	  onFileDialogOpen: PropTypes.func,
 	  /**
 	   * Set to true to use the https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API
 	   * to open the file picker instead of using an `<input type="file">` click event.
 	   */
-	  useFsAccessApi: propTypesExports.bool,
+	  useFsAccessApi: PropTypes.bool,
 	  /**
 	   * Set to true to focus the root element on render
 	   */
-	  autoFocus: propTypesExports.bool,
+	  autoFocus: PropTypes.bool,
 	  /**
 	   * Cb for when the `dragenter` event occurs.
 	   *
 	   * @param {DragEvent} event
 	   */
-	  onDragEnter: propTypesExports.func,
+	  onDragEnter: PropTypes.func,
 	  /**
 	   * Cb for when the `dragleave` event occurs
 	   *
 	   * @param {DragEvent} event
 	   */
-	  onDragLeave: propTypesExports.func,
+	  onDragLeave: PropTypes.func,
 	  /**
 	   * Cb for when the `dragover` event occurs
 	   *
 	   * @param {DragEvent} event
 	   */
-	  onDragOver: propTypesExports.func,
+	  onDragOver: PropTypes.func,
 	  /**
 	   * Cb for when the `drop` event occurs.
 	   * Note that this callback is invoked after the `getFilesFromEvent` callback is done.
@@ -9009,7 +8991,7 @@
 	   * @param {FileRejection[]} fileRejections
 	   * @param {(DragEvent|Event)} event A drag event or input change event (if files were selected via the file dialog)
 	   */
-	  onDrop: propTypesExports.func,
+	  onDrop: PropTypes.func,
 	  /**
 	   * Cb for when the `drop` event occurs.
 	   * Note that if no files are accepted, this callback is not invoked.
@@ -9017,7 +8999,7 @@
 	   * @param {File[]} files
 	   * @param {(DragEvent|Event)} event
 	   */
-	  onDropAccepted: propTypesExports.func,
+	  onDropAccepted: PropTypes.func,
 	  /**
 	   * Cb for when the `drop` event occurs.
 	   * Note that if no files are rejected, this callback is not invoked.
@@ -9025,19 +9007,19 @@
 	   * @param {FileRejection[]} fileRejections
 	   * @param {(DragEvent|Event)} event
 	   */
-	  onDropRejected: propTypesExports.func,
+	  onDropRejected: PropTypes.func,
 	  /**
 	   * Cb for when there's some error from any of the promises.
 	   *
 	   * @param {Error} error
 	   */
-	  onError: propTypesExports.func,
+	  onError: PropTypes.func,
 	  /**
 	   * Custom validation function. It must return null if there's no errors.
 	   * @param {File} file
 	   * @returns {FileError|FileError[]|null}
 	   */
-	  validator: propTypesExports.func
+	  validator: PropTypes.func
 	};
 	/**
 	 * A function that is invoked for the `dragenter`,
@@ -9672,14 +9654,36 @@
 	function noop() {}
 
 	var Modal = function (_a) {
-	    var isOpen = _a.isOpen, onClose = _a.onClose, contentLabel = _a.contentLabel, children = _a.children;
-	    if (!isOpen)
+	    var isOpen = _a.isOpen, onClose = _a.onClose, title = _a.title, children = _a.children;
+	    var modalRef = reactExports.useRef(null);
+	    var _b = reactExports.useState(isOpen), show = _b[0], setShow = _b[1];
+	    reactExports.useEffect(function () {
+	        if (isOpen) {
+	            setShow(true);
+	        }
+	        else {
+	            setTimeout(function () { return setShow(false); }, 200); // Delay of 200ms to play the transition
+	        }
+	    }, [isOpen]);
+	    reactExports.useEffect(function () {
+	        var handleOutsideClick = function (event) {
+	            if (modalRef.current && !modalRef.current.contains(event.target)) {
+	                onClose();
+	            }
+	        };
+	        if (isOpen) {
+	            document.addEventListener('mousedown', handleOutsideClick);
+	        }
+	        return function () {
+	            document.removeEventListener('mousedown', handleOutsideClick);
+	        };
+	    }, [isOpen, onClose]);
+	    if (!show)
 	        return null;
 	    return (React.createElement("div", { style: OVERLAY_STYLES },
-	        React.createElement("div", { style: MODAL_STYLES },
-	            React.createElement("h2", null, contentLabel),
-	            children,
-	            React.createElement("button", { onClick: onClose }, "Close Modal"))));
+	        React.createElement("div", { ref: modalRef, style: __assign(__assign({}, MODAL_STYLES), { opacity: isOpen ? 1 : 0 }) },
+	            React.createElement("h2", null, title),
+	            children)));
 	};
 	var OVERLAY_STYLES = {
 	    position: 'fixed',
@@ -9693,17 +9697,14 @@
 	};
 	var MODAL_STYLES = {
 	    backgroundColor: '#FFF',
-	    padding: '50px',
+	    padding: '20px',
 	    borderRadius: '10px',
 	    maxWidth: '500px',
-	    margin: '0 auto'
+	    margin: '0 auto',
+	    transition: 'opacity 0.2s ease-in-out'
 	};
 
-	var cropperExports = {};
-	var cropper = {
-	  get exports(){ return cropperExports; },
-	  set exports(v){ cropperExports = v; },
-	};
+	var cropper = {exports: {}};
 
 	/*!
 	 * Cropper.js v1.5.13
@@ -12951,7 +12952,8 @@
 	    return Cropper;
 	  });
 	})(cropper);
-	var t = cropperExports;
+	var cropperExports = cropper.exports;
+	var t = /*@__PURE__*/getDefaultExportFromCjs(cropperExports);
 
 	var n = function () {
 	  return n = Object.assign || function (e) {
@@ -13082,21 +13084,40 @@
 	ReactImageCropper.displayName = 'ImgCropper';
 
 	var ReactImageCropperPopup = function (_a) {
-	    var open = _a.open, DialogClose = _a.DialogClose, img = _a.img, afterCut = _a.afterCut, aspectRatio = _a.aspectRatio, lockAspectRatio = _a.lockAspectRatio;
+	    var open = _a.open, onClose = _a.onClose, img = _a.img, afterCrop = _a.afterCrop, title = _a.title, lockAspectRatio = _a.lockAspectRatio, aspectRatio = _a.aspectRatio;
 	    var ImageCropperRef = reactExports.useRef(null);
 	    var handleSaveClick = function () {
-	        DialogClose();
+	        onClose();
 	        if (ImageCropperRef.current) {
-	            afterCut(ImageCropperRef.current.getCropData());
+	            afterCrop(ImageCropperRef.current.getCropData());
 	        }
 	    };
-	    return (React.createElement(Modal, { isOpen: open, onClose: DialogClose, contentLabel: "Crop your picture" },
+	    return (React.createElement(Modal, { isOpen: open, onClose: onClose, title: title },
 	        React.createElement(ReactImageCropper, { aspectRatio: aspectRatio, src: img, lockAspectRatio: lockAspectRatio, ref: ImageCropperRef }),
-	        React.createElement("button", { onClick: handleSaveClick }, "Save")));
+	        React.createElement("button", { style: BUTTON_STYLES, onClick: handleSaveClick }, "Save")));
+	};
+	var BUTTON_STYLES = {
+	    display: 'inline-flex',
+	    alignItems: 'center',
+	    justifyContent: 'center',
+	    boxSizing: 'border-box',
+	    backgroundColor: 'transparent',
+	    border: 0,
+	    cursor: 'pointer',
+	    textDecoration: 'none',
+	    fontWeight: 600,
+	    fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+	    fontSize: '0.875rem',
+	    lineHeight: '1.75',
+	    minWidth: 64,
+	    borderRadius: 8,
+	    transition: 'background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, boxShadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, borderColor 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+	    textTransform: 'none',
+	    padding: '9px 16px'
 	};
 
 	var ReactImageCropperDropzone = function (_a) {
-	    var children = _a.children, accept = _a.accept, afterCut = _a.afterCut, aspectRatio = _a.aspectRatio, _b = _a.lockAspectRatio, lockAspectRatio = _b === void 0 ? true : _b;
+	    var children = _a.children, accept = _a.accept, afterCrop = _a.afterCrop, title = _a.title, _b = _a.lockAspectRatio, lockAspectRatio = _b === void 0 ? true : _b, aspectRatio = _a.aspectRatio;
 	    var _c = reactExports.useState(false), open = _c[0], setOpen = _c[1];
 	    var _d = reactExports.useState(''), image = _d[0], setImage = _d[1];
 	    var onDrop = reactExports.useCallback(function (acceptedFiles) {
@@ -13124,9 +13145,9 @@
 	        React.createElement("div", __assign({}, getRootProps()),
 	            React.createElement("input", __assign({}, getInputProps())),
 	            children),
-	        React.createElement(ReactImageCropperPopup, { open: open, DialogClose: function () {
+	        React.createElement(ReactImageCropperPopup, { open: open, onClose: function () {
 	                setOpen(false);
-	            }, img: image, afterCut: afterCut, aspectRatio: aspectRatio, lockAspectRatio: lockAspectRatio })));
+	            }, img: image, afterCrop: afterCrop, title: title, lockAspectRatio: lockAspectRatio, aspectRatio: aspectRatio })));
 	};
 
 	/* eslint-disable */
@@ -13197,16 +13218,15 @@
 	var Demo = function () {
 	    var _a = reactExports.useState(''), base64 = _a[0], setBase64 = _a[1];
 	    var afterCrop = function (base64) {
-	        console.log(base64);
 	        setBase64(base64);
+	        console.log(base64);
 	    };
 	    var imageStyle = {
 	        backgroundImage: "url(".concat(base64, ")"),
 	        backgroundPosition: 'center',
 	        backgroundSize: 'cover',
 	        borderRadius: 1,
-	        height: 380,
-	        mt: 3
+	        height: 380
 	    };
 	    return (React.createElement("div", { className: "Paper" },
 	        React.createElement("h6", { className: "h6" }, "Post cover"),
@@ -13216,7 +13236,7 @@
 	        React.createElement(ReactImageCropperDropzone, { accept: {
 	                'image/jpeg': ['.jpeg', '.jpg'],
 	                'image/png': ['.png']
-	            }, afterCut: afterCrop, aspectRatio: 1, lockAspectRatio: true },
+	            }, title: "Crop your picture", lockAspectRatio: true, aspectRatio: 952 / 380, afterCrop: afterCrop },
 	            React.createElement("div", { className: "Box Border Button", role: "button", tabIndex: 0 },
 	                React.createElement("div", { className: "Box" },
 	                    React.createElement(UploadSvg, null),
