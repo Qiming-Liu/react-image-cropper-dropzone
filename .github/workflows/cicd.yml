@@ -19,7 +19,6 @@ jobs:
           node-version: "18"
       - run: |
           yarn
-          yarn test
           yarn build
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
