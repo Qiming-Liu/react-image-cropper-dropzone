@@ -8,17 +8,16 @@ const Demo: React.FC = () => {
   const [base64, setBase64] = useState<string>('')
 
   const afterCrop = (base64: string) => {
-    console.log(base64)
     setBase64(base64)
+    console.log(base64)
   }
 
-  const imageStyle = {
+  const imageStyle: React.CSSProperties = {
     backgroundImage: `url(${base64})`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     borderRadius: 1,
     height: 380,
-    mt: 3,
   }
 
   return (
@@ -37,9 +36,10 @@ const Demo: React.FC = () => {
           'image/jpeg': ['.jpeg', '.jpg'],
           'image/png': ['.png'],
         }}
-        afterCut={afterCrop}
-        aspectRatio={1}
+        title="Crop your picture"
         lockAspectRatio={true}
+        aspectRatio={952 / 380}
+        afterCrop={afterCrop}
       >
         <div className="Box Border Button" role="button" tabIndex={0}>
           <div className="Box">

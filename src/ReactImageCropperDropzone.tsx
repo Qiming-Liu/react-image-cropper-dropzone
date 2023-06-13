@@ -7,17 +7,19 @@ export {Accept}
 export interface ReactImageCropperDropzoneProps {
   children: React.ReactNode
   accept: Accept
-  afterCut: (dataUrl: string) => void
-  aspectRatio: number
+  afterCrop: (dataUrl: string) => void
+  title: string
   lockAspectRatio?: boolean
+  aspectRatio: number
 }
 
 export const ReactImageCropperDropzone: React.FC<ReactImageCropperDropzoneProps> = ({
   children,
   accept,
-  afterCut,
-  aspectRatio,
+  afterCrop,
+  title,
   lockAspectRatio = true,
+  aspectRatio,
 }) => {
   const [open, setOpen] = useState<boolean>(false)
   const [image, setImage] = useState<string>('')
@@ -55,13 +57,14 @@ export const ReactImageCropperDropzone: React.FC<ReactImageCropperDropzoneProps>
       </div>
       <ReactImageCropperPopup
         open={open}
-        DialogClose={() => {
+        onClose={() => {
           setOpen(false)
         }}
         img={image}
-        afterCut={afterCut}
-        aspectRatio={aspectRatio}
+        afterCrop={afterCrop}
+        title={title}
         lockAspectRatio={lockAspectRatio}
+        aspectRatio={aspectRatio}
       />
     </>
   )

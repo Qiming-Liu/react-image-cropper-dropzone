@@ -3,8 +3,6 @@ on:
   push:
     branches: ['main']
 env:
-  NODE_ENV: production
-  FAST_REFRESH: false
   CI: false
 permissions:
   contents: write
