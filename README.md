@@ -20,10 +20,10 @@ import React, {useState} from 'react'
 import ReactImageCropperDropzone from 'react-image-cropper-dropzone'
 import UploadSvg from './UploadSvg'
 
-import './Demo.css'
+import 'react-image-cropper-dropzone/index.css'
 
 const Demo: React.FC = () => {
-  const [base64, setBase64] = useState < string > ''
+  const [base64, setBase64] = useState<string>('')
 
   const afterCrop = (base64: string) => {
     console.log(base64)

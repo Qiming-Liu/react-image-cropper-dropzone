@@ -32,14 +32,14 @@
   "scripts": {
     "dev": "rollup --config rollup.config.dev.mjs -w",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src ./example --fix",
-    "test": "jest --coverage --forceExit --passWithNoTests",
     "prepublishOnly": "yarn build",
     "build": "yarn clean && rollup --config rollup.config.prod.mjs && rollup --config rollup.config.mjs",
     "clean": "rimraf dist && rimraf example/assets"
   },
   "dependencies": {
     "react-cropper": "^2.1.8",
-    "react-dropzone": "^14.2.3"
+    "react-dropzone": "^14.2.3",
+    "rollup-plugin-postcss": "^4.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
@@ -55,9 +55,6 @@
     "@rollup/plugin-replace": "^5.0.2",
     "@rollup/plugin-terser": "^0.4.0",
     "@rollup/plugin-typescript": "^11.0.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^14.0.0",
-    "@types/jest": "^29.4.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/react-test-renderer": "^18.0.0",
@@ -65,7 +62,6 @@
     "@typescript-eslint/parser": "^5.54.1",
     "acorn": "^8.8.2",
     "acorn-jsx": "^5.3.2",
-    "babel-jest": "^29.5.0",
     "babel-preset-react-app": "^10.0.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.35.0",
@@ -75,8 +71,6 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "jest": "^29.5.0",
-    "jest-environment-jsdom": "^29.5.0",
     "np": "^7.6.3",
     "postcss": "^8.4.21",
     "prettier": "^2.8.8",
