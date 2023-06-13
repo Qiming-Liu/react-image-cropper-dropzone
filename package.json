@@ -33,7 +33,7 @@
     "dev": "rollup --config rollup.config.dev.mjs -w",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src ./example --fix",
     "clean": "rimraf dist && rimraf example/assets",
-    "build": "rollup --config rollup.config.prod.mjs && rollup --config rollup.config.mjs",
+    "build": "npm run clean && rollup --config rollup.config.prod.mjs && rollup --config rollup.config.mjs",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {

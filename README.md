@@ -1,4 +1,4 @@
-# [react-image-cropper-dropzone](https://qiming-liu.github.io/react-image-cropper-dropzone/)
+# [react-image-cropper-dropzone](https://www.npmjs.com/package/react-image-cropper-dropzone)
 ![LICENSE](https://img.shields.io/github/license/Qiming-Liu/react-image-cropper-dropzone)
 ![Code Size](https://img.shields.io/github/languages/code-size/Qiming-Liu/react-image-cropper-dropzone)
 ![Downloads](https://img.shields.io/npm/dm/react-image-cropper-dropzone.svg)
