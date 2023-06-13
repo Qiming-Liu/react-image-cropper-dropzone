@@ -1,0 +1,22 @@
+name: NPM Package Install test
+on:
+  push:
+  schedule:
+    - cron: "25 * * * *"
+env:
+    CI: false
+permissions:
+    contents: write
+    pull-requests: write
+jobs:
+  test-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+      - run: |
+          npm install
+          npm install react-image-cropper-dropzone
