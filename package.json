@@ -90,5 +90,9 @@
   },
   "peerDependencies": {
     "react": ">=17.0.2"
+  },
+  "engines": {
+    "node": "^18.0.0",
+    "yarn": "^3.6.0"
   }
 }
