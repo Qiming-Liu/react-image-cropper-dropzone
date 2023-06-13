@@ -1,6 +1,6 @@
 {
   "name": "react-image-cropper-dropzone",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple react dropzone for image cropper.",
   "main": "dist/react-image-cropper-dropzone.umd.js",
   "module": "dist/react-image-cropper-dropzone.es.js",
@@ -32,18 +32,18 @@
   "scripts": {
     "dev": "rollup --config rollup.config.dev.mjs -w",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src ./example --fix",
-    "prepublishOnly": "yarn build",
-    "build": "yarn clean && rollup --config rollup.config.prod.mjs && rollup --config rollup.config.mjs",
+    "prepublishOnly": "npm run build",
+    "build": "npm run clean && rollup --config rollup.config.prod.mjs && rollup --config rollup.config.mjs",
     "clean": "rimraf dist && rimraf example/assets"
   },
   "dependencies": {
     "react-cropper": "^2.1.8",
-    "react-dropzone": "^14.2.3",
-    "rollup-plugin-postcss": "^4.0.2"
+    "react-dropzone": "^14.2.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
     "@babel/core": "^7.21.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
     "@babel/plugin-transform-object-assign": "^7.18.6",
     "@babel/plugin-transform-runtime": "^7.21.0",
@@ -90,9 +90,5 @@
   },
   "peerDependencies": {
     "react": ">=17.0.2"
-  },
-  "engines": {
-    "node": "^18.0.0",
-    "yarn": "^3.6.0"
   }
 }

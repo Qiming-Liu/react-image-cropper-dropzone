@@ -18,9 +18,8 @@ jobs:
         with:
           node-version: "18"
       - run: |
-          yarn set version stable
-          yarn
-          yarn build
+          npm install
+          npm run build
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: example
