@@ -1,4 +1,3 @@
-import serve from 'rollup-plugin-serve'
 import jsx from 'acorn-jsx'
 import typescript from '@rollup/plugin-typescript'
 import resolve from '@rollup/plugin-node-resolve'
@@ -22,7 +21,7 @@ export default {
   },
   acornInjectPlugins: [jsx()],
   plugins: [
-    replace({'process.env.NODE_ENV': JSON.stringify('development'), preventAssignment: true}),
+    replace({'process.env.NODE_ENV': JSON.stringify('production'), preventAssignment: true}),
     css({
       output: path.resolve('example/assets/bundle.css'),
     }),
@@ -34,12 +33,5 @@ export default {
     }),
     babel({babelHelpers: 'bundled'}),
     typescript({tsconfig: 'tsconfig.dev.json'}),
-    serve({
-      open: true,
-      verbose: true,
-      contentBase: 'example',
-      host: 'localhost',
-      port: 3000,
-    }),
   ],
 }

@@ -17,7 +17,7 @@ $ yarn add react-image-cropper-dropzone
 ## Example
 ```jsx
 import React, {useState} from 'react'
-import ReactImageCropperDropzone from '../../src'
+import ReactImageCropperDropzone from 'react-image-cropper-dropzone'
 import UploadSvg from './UploadSvg'
 
 import './Demo.css'
