@@ -1,35 +1,52 @@
-# [react-image-cropper-dropzone](https://github.com/Qiming-Liu/react-image-cropper-dropzone)
+# [react-image-cropper-dropzone](https://qiming-liu.github.io/react-image-cropper-dropzone/)
+![LICENSE](https://img.shields.io/github/license/Qiming-Liu/react-image-cropper-dropzone)
+![Code Size](https://img.shields.io/github/languages/code-size/Qiming-Liu/react-image-cropper-dropzone)
+![Downloads](https://img.shields.io/npm/dm/react-image-cropper-dropzone.svg)
 
 Simple react dropzone for image cropper.
+
+<p align="center"><img src="preview.png"></p>
 
 ## Install
 
 ```shell
 $ npm install react-image-cropper-dropzone
 ```
-
 or
-
 ```shell
 $ yarn add react-image-cropper-dropzone
 ```
 
-## Example
+## Example ([Online Preview](https://qiming-liu.github.io/react-image-cropper-dropzone/))
 ```jsx
 import React, {useState} from 'react'
-import ReactImageCropperDropzone from 'react-image-cropper-dropzone'
-import UploadSvg from './UploadSvg'
 
+// import react-image-cropper-dropzone
+import ReactImageCropperDropzone from 'react-image-cropper-dropzone'
+
+// import styles
+import UploadSvg from './UploadSvg'
 import 'react-image-cropper-dropzone/index.css'
 
 const Demo: React.FC = () => {
+  // variable to store image base64
   const [base64, setBase64] = useState<string>('')
 
+  // callback function after image crop
   const afterCrop = (base64: string) => {
-    console.log(base64)
     setBase64(base64)
+    
+    // do something here with base64
+    console.log(base64)
+
+    // download image
+    const link = document.createElement('a')
+    link.href = base64
+    link.download = 'image.png'
+    link.click()
   }
 
+  // style that display cropped image
   const imageStyle = {
     backgroundImage: `url(${base64})`,
     backgroundPosition: 'center',
