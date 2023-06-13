@@ -6,7 +6,7 @@
 
 Simple react dropzone for image cropper.
 
-<p align="center"><img src="preview.png"></p>
+<p align="center"><img src="preview.gif"></p>
 
 ## Install
 
