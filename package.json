@@ -77,7 +77,7 @@
     "react-app-polyfill": "^3.0.0",
     "react-dom": "^18.2.0",
     "react-test-renderer": "^18.2.0",
-    "rimraf": "^4.4.0",
+    "rimraf": "^5.0.1",
     "rollup": "^3.19.0",
     "rollup-plugin-bundle-size": "^1.0.3",
     "rollup-plugin-delete": "^2.0.0",
