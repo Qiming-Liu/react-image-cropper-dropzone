@@ -1,6 +1,6 @@
 {
   "name": "react-image-cropper-dropzone",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Simple react dropzone for image cropper.",
   "main": "dist/react-image-cropper-dropzone.umd.js",
   "module": "dist/react-image-cropper-dropzone.es.js",
